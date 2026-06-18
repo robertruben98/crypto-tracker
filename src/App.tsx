@@ -6,6 +6,11 @@ import { CoinTable } from './components/CoinTable'
 import { ErrorBanner } from './components/ErrorBanner'
 import './App.css'
 
+function friendlyError(error: string): string {
+  if (error.includes('429')) return 'Demasiadas peticiones, reintentando…'
+  return 'No se pudo actualizar el mercado, reintentando…'
+}
+
 export default function App() {
   const { data, loading, error, lastUpdated } = useMarkets()
   const [query, setQuery] = useState('')
@@ -22,7 +27,7 @@ export default function App() {
         )}
       </header>
       <SearchBar value={query} onChange={setQuery} />
-      {error && <ErrorBanner message={error} />}
+      {error && <ErrorBanner message={friendlyError(error)} />}
       {loading && data.length === 0
         ? <p className="loading">Cargando mercado…</p>
         : <CoinTable coins={coins} />}
