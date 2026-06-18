@@ -11,7 +11,7 @@ export function CoinTable({ coins }: { coins: Coin[] }) {
       <thead>
         <tr>
           <th>#</th><th>Nombre</th><th>Precio</th>
-          <th>1h</th><th>24h</th><th>7d</th><th>Market Cap</th><th>7d</th>
+          <th>1h</th><th>24h</th><th>7d</th><th>Market Cap</th><th>Chart</th>
         </tr>
       </thead>
       <tbody>
