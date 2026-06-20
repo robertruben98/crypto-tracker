@@ -4,10 +4,10 @@ export function SearchBar({ value, onChange }: Props) {
   return (
     <input
       type="search"
-      placeholder="Buscar moneda…"
+      placeholder="Search coin…"
       value={value}
       onChange={(e) => onChange(e.target.value)}
-      aria-label="Buscar moneda"
+      aria-label="Search coin"
     />
   )
 }
