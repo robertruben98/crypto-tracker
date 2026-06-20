@@ -10,7 +10,7 @@ export function CoinTable({ coins }: { coins: Coin[] }) {
     <table className="coin-table">
       <thead>
         <tr>
-          <th>#</th><th>Nombre</th><th>Precio</th>
+          <th>#</th><th>Name</th><th>Price</th>
           <th>1h</th><th>24h</th><th>7d</th><th>Market Cap</th><th>Chart</th>
         </tr>
       </thead>

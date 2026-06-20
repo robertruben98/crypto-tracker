@@ -7,8 +7,8 @@ import { ErrorBanner } from './components/ErrorBanner'
 import './App.css'
 
 function friendlyError(error: string): string {
-  if (error.includes('429')) return 'Demasiadas peticiones, reintentando…'
-  return 'No se pudo actualizar el mercado, reintentando…'
+  if (error.includes('429')) return 'Too many requests, retrying…'
+  return 'Failed to update markets, retrying…'
 }
 
 export default function App() {
@@ -22,14 +22,14 @@ export default function App() {
         <h1>🪙 Crypto Tracker</h1>
         {lastUpdated && (
           <span className="updated">
-            Actualizado {new Date(lastUpdated).toLocaleTimeString()}
+            Updated at {new Date(lastUpdated).toLocaleTimeString()}
           </span>
         )}
       </header>
       <SearchBar value={query} onChange={setQuery} />
       {error && <ErrorBanner message={friendlyError(error)} />}
       {loading && data.length === 0
-        ? <p className="loading">Cargando mercado…</p>
+        ? <p className="loading">Loading markets…</p>
         : <CoinTable coins={coins} />}
     </main>
   )
