@@ -1,5 +1,7 @@
 # 🪙 Crypto Tracker
 
+[![Live demo](https://img.shields.io/badge/live%20demo-online-brightgreen)](https://robertruben98.github.io/crypto-tracker/)
+
 A small, production-style single-page app that shows live cryptocurrency market
 data from the [CoinGecko API](https://www.coingecko.com/en/api). Top-50 coins by
 market cap, auto-refreshed every 60 seconds, with client-side search and 7-day
